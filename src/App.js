@@ -17,7 +17,7 @@ const [{user, token}, dispatch] = useDataLayerValue();
     window.location.hash = "";
     const _token = hash.access_token;
       if(_token){
-
+        // console.log("token", _token)
           dispatch({
             type : "SET_TOKEN",
             token : _token
@@ -33,13 +33,14 @@ const [{user, token}, dispatch] = useDataLayerValue();
           });
         });
 
-        spotify.getCategories( {limit:100}).then((playlists) => {
+        spotify.getCategories( {limit:10}).then((playlists) => {
           // console.log(playlists)
           dispatch({
             type:'SET_PLAYLISTS',
             playlists:playlists
           })
         })
+   
 
         spotify.getPlaylist('37i9dQZEVXbLZ52XmnySJg').then(response => {
           // console.log(response.images[0].url)

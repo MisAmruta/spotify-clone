@@ -10,7 +10,7 @@ function Sidebar() {
 
     const [{ playlists },dispatch] = useDataLayerValue();
 
-    // console.log(playlists);
+     console.log(playlists);
     return (
         <div className="sidebar">
           <img className="sidebar_logo" src="https://1000logos.net/wp-content/uploads/2017/08/Spotify-symbol.jpg" alt="" />
